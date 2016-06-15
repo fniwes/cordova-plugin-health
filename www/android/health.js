@@ -87,7 +87,7 @@ Health.prototype.queryAggregated = function (opts, onSuccess, onError) {
     if(typeof opts.endDate == 'object') opts.endDate = opts.endDate.getTime();
 	if(opts.dataType =='calories.basal'){
 		//for basal calories, extend the query period
-		opts.startDate: new Date(opts.startDate.getTime() - navigator.health.BASAL_CALORIES_QUERY_PERIOD);
+		opts.startDate = new Date(opts.startDate.getTime() - navigator.health.BASAL_CALORIES_QUERY_PERIOD);
 	}
     exec(function(data){
       //reconvert the dates back to Date objects
